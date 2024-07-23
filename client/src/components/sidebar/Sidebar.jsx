@@ -1,6 +1,7 @@
 import './sidebar.css'
 import {RssFeed,Chat,PlayCircle,Groups,Bookmark,HelpOutline,WorkOutline,School,Event} from '@mui/icons-material';
-
+import {Users} from '../../dummyData'
+import CloseFriend from '../closeFriend/CloseFriend';
 
 const Sidebar = () => {
   return (
@@ -49,32 +50,10 @@ const Sidebar = () => {
         </button>
         <hr className='sidebarHr'/>
         <ul className="sidebarFriendList">
-          <li className="sidebarFriend">
-            <img src="/assets/person/2.jpeg" alt="" className="sidebarFriendImg" />
-            <span className='SidebarFriendName' >Sherin</span>
-          </li>
-          <li className="sidebarFriend">
-            <img src="/assets/person/2.jpeg" alt="" className="sidebarFriendImg" />
-            <span className='SidebarFriendName' >Sherin</span>
-          </li>
-          <li className="sidebarFriend">
-            <img src="/assets/person/2.jpeg" alt="" className="sidebarFriendImg" />
-            <span className='SidebarFriendName' >Sherin</span>
-          </li>
-          <li className="sidebarFriend">
-            <img src="/assets/person/2.jpeg" alt="" className="sidebarFriendImg" />
-            <span className='SidebarFriendName' >Sherin</span>
-          </li>
-          <li className="sidebarFriend">
-            <img src="/assets/person/2.jpeg" alt="" className="sidebarFriendImg" />
-            <span className='SidebarFriendName' >Sherin</span>
-          </li><li className="sidebarFriend">
-            <img src="/assets/person/2.jpeg" alt="" className="sidebarFriendImg" />
-            <span className='SidebarFriendName' >Sherin</span>
-          </li><li className="sidebarFriend">
-            <img src="/assets/person/2.jpeg" alt="" className="sidebarFriendImg" />
-            <span className='SidebarFriendName' >Sherin</span>
-          </li>
+          {Users.map(user=> (
+            <CloseFriend key={user.id} user={user} />
+          ))}
+          
         </ul>
       </div>
     </div>
