@@ -5,6 +5,7 @@ import Topbar from "../../components/topbar/Topbar";
 import "./profile.css";
 
 const Profile = () => {
+
   return (
     <>
       <Topbar />
@@ -15,7 +16,7 @@ const Profile = () => {
             <div className="profileCover">
               <img
                 className="profileCoverImg"
-                src="/assets/post/3.jpeg"
+                src={`/assets/post/3.jpeg`}
                 alt=""
               />
               <img
