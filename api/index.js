@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import connectDB from './config/connectDb.js';
+import cors from 'cors'
 dotenv.config();  
 
 
@@ -16,6 +17,7 @@ import postRoutes from './routes/postRoutes.js'
 //middlewares
 const app = express();
 app.use(express.json());
+app.use(cors());
 app.use(helmet());
 app.use(morgan('common'));
 

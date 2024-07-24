@@ -53,8 +53,10 @@ export const getSinglePost = async(req,res) => {
 }
 
 export const getUserTimeline = async(req,res)=> {
+    console.log(req.params.userId);
+
     try {
-        const currentUser = await User.findById(req.body.userId);
+        const currentUser = await User.findById(req.params.userId);
         const userPosts = await Post.find({userId:currentUser._id});
         const friendPosts = await Promise.all(
             currentUser.following.map(friendId=>{
@@ -66,6 +68,14 @@ export const getUserTimeline = async(req,res)=> {
         res.status(500).json(error)
     }
 }
+
+//get users all posts
+export const getUserTimelinePosts = async(req,res)=> {
+    const user = await User.findOne({username:req.params.username});
+    const posts = await Post.find({userId:user._id});
+    res.status(200).json(posts)
+}
+
 
 //liek and unlike
 export const likePost = async(req,res) => {

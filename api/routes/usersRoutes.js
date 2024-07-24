@@ -9,7 +9,7 @@ import {
 
 const router = express.Router();
 
-router.get("/:id", getSingleUser);
+router.get("/", getSingleUser); 
 router.put("/:id", updateUser);
 router.delete("/:id", deleteUser);
 router.put("/:id/follow", followUser);

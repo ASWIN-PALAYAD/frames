@@ -3,8 +3,10 @@ import User from '../models/userModel.js';
 
 
 export const getSingleUser = async(req,res) => {
+    const userId = req.query.userId;
+    const username = req.query.username;
     try {
-        const user = await User.findById(req.params.id);
+        const user = userId ?  await User.findById(userId) : await User.findOne({username:username}) ;
         const {password,updatedAt,...other} = user._doc
         res.status(200).json(other);
     } catch (error) {
@@ -36,7 +38,7 @@ export const updateUser = async(req,res) => {
 };
 
 
-export const followUser = async(req,res) => {
+export const followUser = async(req,res) => { 
     if(req.body.userId !== req.params.id){
         try {
             const user = await User.findById(req.params.id);
