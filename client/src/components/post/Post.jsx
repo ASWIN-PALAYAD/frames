@@ -9,7 +9,7 @@ import { AuthContext } from "../../context/AuthContext";
 const Post = ({ post }) => {
   const [user, setUser] = useState({});
   const [like, setLike] = useState(post?.likes.length);
-  const [isLiked, setIsLiked] = useState(false);
+  const [isLiked, setIsLiked] = useState(false); 
   const PF = import.meta.env.VITE_PUBLIC_FOLDER;
 
   const {user:currentUser} = useContext(AuthContext);
@@ -43,7 +43,7 @@ const Post = ({ post }) => {
             <Link to={`profile/${user.username}`}>
                 <img
                   className="postProfileImg"
-                  src={user.profilePicture ? user.profilePicture : PF + "person/noAvatar.png"}
+                  src={user.profilePicture ? PF+user.profilePicture : PF + "person/noAvatar.png"}
                   alt="profile pic"
                 />
             </Link>

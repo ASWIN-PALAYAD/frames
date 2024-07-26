@@ -11,7 +11,6 @@ const Profile = () => {
 
   const PF = import.meta.env.VITE_PUBLIC_FOLDER
   const params = useParams();
-  console.log(params);
   const [user, setUser] = useState({});
 
   useEffect(() => {
@@ -23,7 +22,6 @@ const Profile = () => {
     fetchUser();
   }, [params.username]);
 
-
   return (
     <>
       <Topbar />
@@ -34,12 +32,12 @@ const Profile = () => {
             <div className="profileCover">
               <img
                 className="profileCoverImg"
-                src={user.coverPicture || PF+"person/noCover.png"}
+                src={user.coverPicture ? PF+user.coverPicture  : PF+"person/noCover.png"}
                 alt=""
               />
-              <img
+              <img 
                 className="profileUserImg"
-                src={user.profilePicture || PF+"person/noAvatar.png"}
+                src={user.profilePicture ? PF + user.profilePicture : PF+"person/noAvatar.png"}
                 alt=""
               />
             </div>

@@ -3,7 +3,7 @@ import AuthReducer from "./AuthReducer";
 
 const INITIAL_STATE = {
   user: {
-    _id: "669cd3c7cab6c317176937bc",
+    _id: "669cd3c7cab6c317176937bc", 
     username: "sherin",
     email: "sherin@g.com",
     desc:"sherin profile details",

@@ -31,7 +31,20 @@
 .rightbarFriendList{
     padding: 0;
     margin: 0;
-    list-style: none;
+    list-style: none; 
+}
+
+.rightSideFollowButton{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;align-items: center;
+    font-weight: bold;
+    cursor: pointer;
 }
 .rightbarTitle{
     font-size: 18px;
