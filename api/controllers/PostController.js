@@ -53,10 +53,10 @@ export const getSinglePost = async(req,res) => {
 }
 
 export const getUserTimeline = async(req,res)=> {
-    console.log(req.params.userId);
 
     try {
         const currentUser = await User.findById(req.params.userId);
+        console.log(currentUser);
         const userPosts = await Post.find({userId:currentUser._id});
         const friendPosts = await Promise.all(
             currentUser.following.map(friendId=>{
